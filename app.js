@@ -50,7 +50,19 @@ app.get('/ideas', (req,res)=>{
 
 //Add Idea Form Route
 app.get('/ideas/add', (req, res) => {
-    res.render('ideas/add')
+    res.render('ideas/add');
+});
+
+//Edit Idea Form Route
+app.get('/ideas/edit/:id', (req, res) => {
+    Idea.findOne({
+        _id: req.params.id
+    })
+    .then(idea =>{
+        res.render('ideas/edit',{
+            idea:idea
+        });
+    })
 });
 
 //Process form
