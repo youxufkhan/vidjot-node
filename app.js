@@ -66,7 +66,7 @@ app.get('/about', (req, res) => {
 
 //Use Routes
 app.use('/ideas', ideas);
-app.use('users',users);
+app.use('/users',users);
 
 const port = 5000;
 
